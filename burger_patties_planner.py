@@ -51,11 +51,10 @@ reg_in_stock = st.number_input("Regular patties in stock", min_value=0)
 mini_in_stock = st.number_input("Mini patties in stock", min_value=0)
 
 # --- Calculation button ---
+# --- Centered & Styled Button ---
 st.markdown("""
     <style>
-    div.stButton > button:first-child {
-        display: block;
-        margin: 0 auto;
+    .centered-button button {
         background-color: #FF5722;
         color: white;
         border-radius: 8px;
@@ -64,16 +63,21 @@ st.markdown("""
         padding: 0 1em;
         font-size: 16px;
         font-weight: bold;
+        display: block;
+        margin: auto;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Calculate button ---
-submitted = st.button("💡 Calculate")
+# Wrap button in a container
+col = st.container()
+with col:
+    st.markdown('<div class="centered-button">', unsafe_allow_html=True)
+    submitted = st.button("💡 Calculate")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 if submitted:
     st.success("Calculation complete.")
-    # Run your calculations here...
 
 
     # Calculate total patties required
