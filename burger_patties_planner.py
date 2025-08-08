@@ -60,8 +60,10 @@ st.markdown("""
         color: white;
         border-radius: 8px;
         height: 3em;
-        width: 50%;
+        min-width: 150px;
+        padding: 0 1em;
         font-size: 16px;
+        font-weight: bold;
     }
     </style>
 """, unsafe_allow_html=True)
