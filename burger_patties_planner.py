@@ -1,7 +1,7 @@
 import math
 import streamlit as st
 
-st.set_page_config(page_title="Burger Patties Planner", page_icon="🍔", layout="centered")
+st.set_page_config(page_title="Jagger Burger Patties Planner", page_icon="🍔", layout="centered")
 
 # Hide GitHub icon (top-right)
 hide_github = """
@@ -30,7 +30,7 @@ mini_per_kg = max(1, usable_per_kg_g // mini_piece_g)
 st.sidebar.caption(f"Yield: {int(reg_per_kg)} regular/kg, {int(mini_per_kg)} mini/kg")
 
 # ---------- Main UI ----------
-st.title("🍔 Burger Patties Production Calculator")
+st.markdown("## 🍔 Jagger Burger Patties Calculator")
 
 with st.form("planner"):
     st.markdown("### 1) Sales Target")
