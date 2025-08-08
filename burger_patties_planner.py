@@ -1,7 +1,7 @@
 import math
 import streamlit as st
 
-st.set_page_config(page_title="Jagger Burger Patties Planner", page_icon="🍔", layout="centered")
+st.set_page_config(page_title="Burger Patties Planner", page_icon="🍔", layout="centered")
 
 # ---------- Sidebar: Branch settings (editable if HQ changes rules) ----------
 st.sidebar.header("⚙️ Branch settings")
@@ -80,3 +80,17 @@ if submitted:
     st.write(f"- Regular: **{kg_g(reg_kg_rounded)}**")
     st.write(f"- Mini: **{kg_g(mini_kg_rounded)}**")
     st.info(f"**Total raw beef:** {kg_g(total_kg)}")
+    
+    st.markdown("### Notes")
+    st.write(
+        "- Yields are derived from patty weights and the selected waste per kg.\n"
+        "- You can change pack sizes and revenue per pack in the sidebar (varies by branch).\n"
+        "- Rounds meat up to the nearest 0.1 kg to avoid shortages."
+    )
+
+# Footer
+st.caption(
+    "Built for mobile: use the sidebar for branch-specific settings. "
+    "Adjust any numbers and re-calc anytime."
+)
+
