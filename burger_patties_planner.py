@@ -38,8 +38,8 @@ with st.form("planner"):
     st.divider()
     st.markdown("### 2) Current stock")
     c3, c4 = st.columns(2)
-    reg_in_stock = c3.number_input("Regular patties left in stock", min_value=0, step=1, value=0.0)
-    mini_in_stock = c4.number_input("Mini patties left in stock", min_value=0, step=1, value=0.0)
+    reg_in_stock = c3.number_input("Regular patties left in stock", min_value=0, step=1, value=0.0, format="%.0f)
+    mini_in_stock = c4.number_input("Mini patties left in stock", min_value=0, step=1, value=0.0, format="%.0f)
 
     submitted = st.form_submit_button("Calculate 💡", use_container_width=True)
 
