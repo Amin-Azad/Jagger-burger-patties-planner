@@ -22,7 +22,7 @@ mini_per_kg = max(1, usable_per_kg_g // mini_piece_g)
 st.sidebar.caption(f"Yield: {int(reg_per_kg)} regular/kg, {int(mini_per_kg)} mini/kg (usable {usable_per_kg_g} g/kg).")
 
 # ---------- Main UI ----------
-st.title("🍔 Patties Production Calculator")
+st.title("🍔 Jagger Patties Production Calculator")
 
 with st.form("planner"):
     st.markdown("### 1) Sales target")
@@ -38,8 +38,8 @@ with st.form("planner"):
     st.divider()
     st.markdown("### 2) Current stock")
     c3, c4 = st.columns(2)
-    reg_in_stock = c3.number_input("Regular patties left in stock", min_value=0, step=1, value=16)
-    mini_in_stock = c4.number_input("Mini patties left in stock", min_value=0, step=1, value=20)
+    reg_in_stock = c3.number_input("Regular patties left in stock", min_value=0, step=1, value=0.0)
+    mini_in_stock = c4.number_input("Mini patties left in stock", min_value=0, step=1, value=0.0)
 
     submitted = st.form_submit_button("Calculate 💡", use_container_width=True)
 
