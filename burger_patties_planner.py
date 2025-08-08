@@ -51,8 +51,28 @@ reg_in_stock = st.number_input("Regular patties in stock", min_value=0)
 mini_in_stock = st.number_input("Mini patties in stock", min_value=0)
 
 # --- Calculation button ---
-if st.button("Calculate 💡"):
+st.markdown("""
+    <style>
+    div.stButton > button:first-child {
+        display: block;
+        margin: 0 auto;
+        background-color: #FF5722;
+        color: white;
+        border-radius: 8px;
+        height: 3em;
+        width: 50%;
+        font-size: 16px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- Calculate button ---
+submitted = st.button("💡 Calculate")
+
+if submitted:
     st.success("Calculation complete.")
+    # Run your calculations here...
+
 
     # Calculate total patties required
     reg_required_total = (total_budget / reg_pack_revenue) * 6
