@@ -52,9 +52,14 @@ mini_in_stock = st.number_input("Mini patties in stock", min_value=0)
 
 # --- Calculation button ---
 # --- Centered & Styled Button ---
+# --- Centered & Styled Button ---
 st.markdown("""
     <style>
-    .centered-button button {
+    div.stButton {
+        display: flex;
+        justify-content: center;
+    }
+    div.stButton > button:first-child {
         background-color: #FF5722;
         color: white;
         border-radius: 8px;
@@ -63,18 +68,11 @@ st.markdown("""
         padding: 0 1em;
         font-size: 16px;
         font-weight: bold;
-        display: block;
-        margin: auto;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Wrap button in a container
-col = st.container()
-with col:
-    st.markdown('<div class="centered-button">', unsafe_allow_html=True)
-    submitted = st.button("💡 Calculate")
-    st.markdown('</div>', unsafe_allow_html=True)
+submitted = st.button("💡 Calculate")
 
 if submitted:
     st.success("Calculation complete.")
