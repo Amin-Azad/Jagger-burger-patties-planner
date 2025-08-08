@@ -25,7 +25,7 @@ st.markdown("<h1 style='text-align: center;'>🍔 Jagger Burger Patties Calculat
 
 # --- Settings (hidden in expander) ---
 with st.expander("⚙️ Branch Settings", expanded=False):
-    st.markdown("Adjust only if your branch has different rules.")
+    st.markdown("Adjust only if your branch has different sales Behaviour.")
 
     reg_pack_revenue = st.number_input("Revenue from 6 regular patties (kr)", value=2000.0)
     mini_pack_revenue = st.number_input("Revenue from 10 mini patties (kr)", value=8000.0)
@@ -38,8 +38,8 @@ with st.expander("⚙️ Branch Settings", expanded=False):
 
 # --- Section: Sales Target ---
 st.markdown("### 1) Sales Target")
-today_budget = st.number_input("Today’s expected revenue (kr)", min_value=0)
-tomorrow_cutoff = st.number_input("Tomorrow until cutoff (kr)", min_value=0)
+today_budget = st.number_input("Today’s expected sales (kr)", min_value=0)
+tomorrow_cutoff = st.number_input("Tomorrow's Budget until cutoff hour(kr)", min_value=0)
 cutoff_time = st.slider("Cutoff time tomorrow", min_value=12, max_value=22, value=16)
 
 total_budget = today_budget + tomorrow_cutoff
