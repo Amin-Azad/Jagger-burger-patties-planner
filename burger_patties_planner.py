@@ -27,8 +27,8 @@ st.markdown("<h1 style='text-align: center;'>🍔 Jagger Burger Patties Calculat
 with st.expander("⚙️ Branch Settings", expanded=False):
     st.markdown("Adjust only if your branch has different sales Behaviour.")
 
-    reg_pack_revenue = st.number_input("Revenue from 6 regular patties (kr)", value=2000.0)
-    mini_pack_revenue = st.number_input("Revenue from 10 mini patties (kr)", value=8000.0)
+    reg_pack_revenue = st.number_input("Sell prediction from 6 regular patties (kr)", value=2000.0)
+    mini_pack_revenue = st.number_input("Sell prediction from 10 mini patties (kr)", value=8000.0)
 
     reg_patty_weight = st.number_input("Regular patty weight (g)", value=150)
     mini_patty_weight = st.number_input("Mini patty weight (g)", value=90)
