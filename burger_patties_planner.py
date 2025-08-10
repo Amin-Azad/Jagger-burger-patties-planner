@@ -1,7 +1,7 @@
 import streamlit as st
 import math
 
-# --- Hide GitHub icon, header and footer ---
+
 hide_github = """
     <style>
     #MainMenu, footer {visibility: hidden;}
@@ -10,7 +10,7 @@ hide_github = """
 """
 st.markdown(hide_github, unsafe_allow_html=True)
 
-# --- Jagger Logo ---
+
 st.markdown(
     """
     <div style="text-align: center;">
@@ -20,10 +20,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# --- Title ---
+
 st.markdown("<h1 style='text-align: center;'>🍔 Jagger Burger Patties Calculator</h1>", unsafe_allow_html=True)
 
-# --- Settings (hidden in expander) ---
+
 with st.expander("⚙️ Branch Settings", expanded=False):
     st.markdown("Adjust only if your branch has different sales Behaviour.")
 
@@ -36,7 +36,7 @@ with st.expander("⚙️ Branch Settings", expanded=False):
     reg_per_kg = st.number_input("Regular patties per 1kg raw (incl. waste)", value=6)
     mini_per_kg = st.number_input("Mini patties per 1kg raw (incl. waste)", value=10)
 
-# --- Section: Sales Target ---
+#Sales Target 
 st.markdown("### 1) Sales Target")
 today_budget = st.number_input("Today’s expected sales (kr)", min_value=0)
 tomorrow_cutoff = st.number_input("Tomorrow's Budget until cutoff hour(kr)", min_value=0)
@@ -45,13 +45,12 @@ cutoff_time = st.slider("Cutoff time tomorrow", min_value=12, max_value=22, valu
 total_budget = today_budget + tomorrow_cutoff
 st.caption(f"Total budget: {int(total_budget)} kr — cutoff set to {cutoff_time}:00 tomorrow.")
 
-# --- Section: Current Stock ---
+# Current Stock 
 st.markdown("### 2) Current Stock")
 reg_in_stock = st.number_input("Regular patties in stock", min_value=0)
 mini_in_stock = st.number_input("Mini patties in stock", min_value=0)
 
-# --- Calculation button ---
-# --- Centered & Styled Button ---
+#buttonb
 st.markdown("""
     <style>
     div.stButton {
@@ -78,7 +77,7 @@ if submitted:
 
 
 
-    # Calculate total patties required
+    #total required
     reg_required_total = (total_budget / reg_pack_revenue) * 6
     mini_required_total = (total_budget / mini_pack_revenue) * 10
 
@@ -86,7 +85,7 @@ if submitted:
     reg_to_make = max(0, math.ceil(reg_required_total - reg_in_stock))
     mini_to_make = max(0, math.ceil(mini_required_total - mini_in_stock))
 
-    # Calculate raw beef required
+    #raw beef required
     reg_kg = reg_to_make / reg_per_kg if reg_per_kg else 0
     mini_kg = mini_to_make / mini_per_kg if mini_per_kg else 0
 
@@ -95,7 +94,7 @@ if submitted:
         g = int((kg_float - kg) * 1000)
         return f"{kg} kg {g} g"
 
-    # --- Output ---
+    
     st.markdown("## 📦 Patties to produce")
     col1, col2 = st.columns(2)
     col1.metric("Regular patties to make", reg_to_make)
